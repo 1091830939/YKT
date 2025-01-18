@@ -15,12 +15,24 @@
             audio.style.display = 'none';
             document.body.appendChild(audio);
             
+            let hasPlayed = false;  // 添加标记，记录是否已经播放过
+
             // 监听用户交互（包括移动端）
             function startAudio() {
-                audio.play().catch(() => {
-                    // 如果播放失败，继续监听用户交互
-                    return;
-                });
+                if (!hasPlayed) {  // 只在未播放过时执行
+                    audio.play().then(() => {
+                        hasPlayed = true;  // 播放成功后标记为已播放
+                        // 移除所有事件监听
+                        document.removeEventListener('click', startAudio);
+                        document.removeEventListener('scroll', startAudio);
+                        document.removeEventListener('touchstart', startAudio);
+                        document.removeEventListener('touchmove', startAudio);
+                        document.removeEventListener('touchend', startAudio);
+                    }).catch(() => {
+                        // 如果播放失败，不标记为已播放，继续监听
+                        return;
+                    });
+                }
             }
 
             // 添加PC端和移动端的事件监听
@@ -120,6 +132,9 @@
                     <div class="project-image">
                         <img src="img/xm.png" alt="工程案例">
                         <p class="project-description">本工程为黄冈市浠水县政府招商引资重点项目，总用地面积33275.96㎡，总建筑面积22852.01㎡，其中单体包括办公楼、蓄水池净化水池、1#加工车间、2#加工车间、污水调节池、原材料仓库、1#制砂车间、2#制砂车间、1#生产车间、2#生产车间、成品仓库。该项目投产后每年可以生产15000吨高纯石英砂，可以带动200人就业，年产值在2.88个亿。</p>
+                        <div class="main-project-images">
+                            <img src="img/pz.png" alt="工程案例" class="project-main-img">
+                        </div>
                         <div class="project-images-row">
                             <div class="project-image-half">
                                 <img src="img/zy1.png" alt="工程案例1">

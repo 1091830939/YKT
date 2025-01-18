@@ -254,10 +254,14 @@ footer {
 }
 
 .project-description {
-    margin-top: 15px;
-    text-align: center;
+    margin-top: 30px;
+    text-align: justify;
     font-size: 16px;
     color: var(--text-color);
+    text-indent: 2em;
+    padding: 0 20px;
+    line-height: 1.8;
+    margin-bottom: 30px;
 }
 
 .project-images-row {
@@ -308,4 +312,18 @@ img {
     text-indent: 2em;
     line-height: 1.8;
     text-align: justify;
+}
+
+.main-project-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.project-main-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;  /* 保持原始宽高比 */
+    object-fit: contain;  /* 确保图片完整显示 */
 } 
