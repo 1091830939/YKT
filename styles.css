@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1a4f7c;
+    --secondary-color: #f4a460;
+    --text-color: #333;
+    --light-bg: #f5f5f5;
+    --white: #ffffff;
+}
+
+body {
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 头部样式 */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-top {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 5px 0;
+}
+
+.header-top .contact-info {
+    text-align: right;
+    padding: 0 20px;
+}
+
+.header-top span {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.company-name {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.company-name-en {
+    font-size: 14px;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* 主要内容样式 */
+main {
+    margin-top: 120px;
+}
+
+.hero {
+    height: 500px;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('path/to/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 8px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    letter-spacing: 5px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-top: 15px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: 32px;
+}
+
+/* 关于我们部分 */
+.about-section {
+    padding: 80px 0;
+    background: var(--light-bg);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 业务范围部分 */
+.business-section {
+    padding: 80px 0;
+}
+
+.business-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.business-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.business-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.business-card ul {
+    list-style: none;
+    text-align: center;
+}
+
+.business-card li {
+    margin-bottom: 10px;
+    padding-left: 0;
+    position: relative;
+}
+
+.business-card li:before {
+    content: "";
+}
+
+/* 联系我们部分 */
+.contact-section {
+    padding: 80px 0;
+    background: var(--light-bg);
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* 页脚样式 */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .header-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .company-name {
+        text-align: center;
+    }
+    
+    .company-name-en {
+        font-size: 12px;
+    }
+} 
+
+.project-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.project-image {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.project-description {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.project-images-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0;
+}
+
+.project-image-half {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+}
+
+.project-image-half img {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+}
+
+.project-image {
+    width: 100%;
+    max-width: none;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .project-images-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .project-image-half {
+        max-width: 100%;
+    }
+} 
