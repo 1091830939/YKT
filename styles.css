@@ -280,4 +280,9 @@ footer {
 .project-image {
     width: 100%;
     max-width: none;
+}
+
+.footer-info p {
+    font-size: 14px;
+    opacity: 0.9;
 } 
