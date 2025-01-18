@@ -3,8 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1200, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>湖北阳开泰建设工程有限公司</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script>
+        window.onload = function() {
+            const audio = document.createElement('audio');
+            audio.src = '0.mp3';
+            audio.style.display = 'none';
+            document.body.appendChild(audio);
+            
+            // 监听任何用户交互
+            function startAudio() {
+                audio.play();
+                // 移除所有事件监听器
+                document.removeEventListener('click', startAudio);
+                document.removeEventListener('touchstart', startAudio);
+                document.removeEventListener('mousemove', startAudio);
+                document.removeEventListener('mouseenter', startAudio);
+                document.removeEventListener('scroll', startAudio);
+                document.removeEventListener('keydown', startAudio);
+                document.removeEventListener('mouseover', startAudio);
+                window.removeEventListener('focus', startAudio);
+            }
+
+            // 添加多种交互事件监听
+            document.addEventListener('click', startAudio);
+            document.addEventListener('touchstart', startAudio);
+            document.addEventListener('mousemove', startAudio);
+            document.addEventListener('mouseenter', startAudio);
+            document.addEventListener('scroll', startAudio);
+            document.addEventListener('keydown', startAudio);
+            document.addEventListener('mouseover', startAudio);
+            window.addEventListener('focus', startAudio);
+
+            // 尝试立即播放
+            audio.play().catch(() => {});
+        }
+    </script>
 </head>
 <body>
     <header>
