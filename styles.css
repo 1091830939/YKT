@@ -228,48 +228,6 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .header-main {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav {
-        margin-top: 15px;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-
-    .logo {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .logo img {
-        height: 40px;
-    }
-
-    .company-name {
-        text-align: center;
-    }
-    
-    .company-name-en {
-        font-size: 12px;
-    }
-} 
-
 .project-grid {
     display: flex;
     justify-content: center;
@@ -322,16 +280,4 @@ footer {
 .project-image {
     width: 100%;
     max-width: none;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .project-images-row {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .project-image-half {
-        max-width: 100%;
-    }
 } 
